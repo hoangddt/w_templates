@@ -1,0 +1,13 @@
+/* basic styles for black background and crosshair cursor */
+body {
+	background: #000;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: red;
+}
+
+canvas {
+	cursor: crosshair;
+	display: block;
+}
