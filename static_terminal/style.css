@@ -52,7 +52,7 @@ body {
     position:relative;
     display: block;
 }
-#screen {
+.terminal {
     background-color: #33485E;
     width: 750px;
     height: 450px;
@@ -60,7 +60,7 @@ body {
     margin: 0 auto;
     padding: 1px;
 }
-.font {
+.prompt {
     color: #fff;
     font-family: monospace;
     font-size: 15px;
@@ -68,7 +68,7 @@ body {
     position: static;
 }
 
-.font-green {
+.prompt-green {
     color: #28FF05;
     font-family: monospace;
     font-size: 15px;
