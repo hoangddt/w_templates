@@ -75,3 +75,79 @@ body {
     text-align: left;
     position: static;
 }
+
+/* New */
+@-webkit-keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.input-form {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  transition: opacity 300ms ease-out;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.input-form .dJAX_internal {
+  opacity: 0.0;
+}
+.input-form form, .input-form input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 100;
+  background-color: white;
+}
+.terminal .prompt:before {
+  content: '>  ';
+  display: inline-block;
+}
+
+.terminal .new-output {
+  display: inline-block;
+}
+.terminal .new-output:after {
+  display: inline-block;
+  vertical-align: -0.15em;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 5px;
+  background: #1ff042;
+  box-shadow: 1px 1px 1px rgba(31, 240, 66, 0.65), -1px -1px 1px rgba(31, 240, 66, 0.65), 1px -1px 1px rgba(31, 240, 66, 0.65), -1px 1px 1px rgba(31, 240, 66, 0.65);
+  -webkit-animation: cursor-blink 1.25s steps(1) infinite;
+  -moz-animation: cursor-blink 1.25s steps(1) infinite;
+  animation: cursor-blink 1.25s steps(1) infinite;
+  content: '';
+}
