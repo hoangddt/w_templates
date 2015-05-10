@@ -36,8 +36,15 @@ function resetForm(withKittens){
   $('.new-output').removeClass('new-output');
   input.val('');
   $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt command new-output"></p>');
+  console.log($('.new-output').offset().top);
+  // Autoscroll to bottom
+  $('.terminal').animate({
+                 scrollTop: $('.new-output').offset().top
+                 //scrollTop: $('#your-id').offset().top
+                 //scrollTop: $('.your-class').offset().top
+              }, 'slow');
 
-  $('.new-output').velocity(
-    'scroll'
-  ), {duration: 100}
+  // $('.new-output').velocity(
+  //   'scroll'
+  // ), {duration: 100}
 }

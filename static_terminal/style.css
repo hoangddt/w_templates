@@ -59,6 +59,7 @@ body {
     border-radius: 2%;
     margin: 0 auto;
     padding: 1px;
+    overflow: auto;
 }
 .prompt {
     color: #fff;
