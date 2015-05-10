@@ -130,9 +130,10 @@ body {
   opacity: 100;
   background-color: white;
 }
-.terminal .prompt:before {
-  content: '>  ';
+.terminal .command:before {
+  content: '$  ';
   display: inline-block;
+  padding-right: 5px;
 }
 
 .terminal .new-output {
@@ -150,4 +151,8 @@ body {
   -moz-animation: cursor-blink 1.25s steps(1) infinite;
   animation: cursor-blink 1.25s steps(1) infinite;
   content: '';
+}
+
+.command{
+    color: #41FFB0;
 }

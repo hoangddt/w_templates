@@ -35,7 +35,7 @@ function resetForm(withKittens){
 
   $('.new-output').removeClass('new-output');
   input.val('');
-  $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
+  $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt command new-output"></p>');
 
   $('.new-output').velocity(
     'scroll'
