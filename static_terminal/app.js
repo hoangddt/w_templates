@@ -77,7 +77,7 @@ $('.input-form').on('submit', function(e){
 		{
 			messages : [
 				'command not found',
-				'type "help" to show valid command. Thank you'
+				'type "help" to show valid command. Thank you!'
 			]
 		}
 	];
