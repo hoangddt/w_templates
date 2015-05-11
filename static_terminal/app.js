@@ -13,10 +13,67 @@ input.on('keyup', function(e){
 
 // Handle command
 $('.input-form').on('submit', function(e){
+	var data = [
+		{
+			command : 'help',
+			messages : [
+				'Welcome to hoangddt.net',
+				'this is virtual terminal. The list below show some command that you can type in',
+				'greeting : show greeting message',
+				'who      : show name of the guys own this site',
+				'pau      : print all url that related with this site',
+				'email    : print my email address that you can contact with',
+				'social   : print out all social link of me',
+				'help     : this messages'
+			]
+		},
+		{
+			command : 'who',
+			messages : [
+				'Hi, my name is Hoang (full name: Truong Van Quoc Hoang)',
+				'I live in Viet Nam, currently study IT at DaNang University of Technology',
+				'I love coding....'
+			]
+		},
+		{
+			command : 'pau',
+			messages : [
+				'hoangddt.net       My personal home page (this site)',
+				'blog.hoangddt.net  My blog',
+				'games.hoangddt.net Some game that I created (pending)'
+			]
+		},
+		{
+			command : 'email',
+			messages : [
+				'hi@hoangddt.net'
+			]
+		},
+		{
+			command : 'social',
+			messages : [
+				'<a href="#">github.com/hoangddt<a>',
+				'<a href="#">twitter.com/hoangddt<a>',
+				'<a href="#">facebook.com/hoangddt.net<a>',
+			]
+		},
+		{
+			command : 'greeting',
+			messages : [
+				
+			]
+		},
+		{
+			messages : [
+				'command not found',
+				'type "help" to show valid command. Thank you'
+			]
+		}
+	];
+
 	e.preventDefault();
 	var val = $(this).children($('.ter-input')).val().toLowerCase();
-	var href;
-
+	
 	if (val === 'kittens'){
     	showKittens();
   	}else {
@@ -28,10 +85,6 @@ function resetForm(withKittens){
   var message = "Sorry that command is not recognized."
   var input = $('.ter-input');
 
-  if (withKittens){
-    $('.kittens').removeClass('kittens');
-    message = "Huzzzzzah Kittehs!"
-  }
 
   $('.new-output').removeClass('new-output');
   input.val('');
