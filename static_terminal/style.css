@@ -69,12 +69,8 @@ body {
     position: static;
 }
 
-.prompt-green {
+.green {
     color: #28FF05;
-    font-family: monospace;
-    font-size: 15px;
-    text-align: left;
-    position: static;
 }
 
 /* New */

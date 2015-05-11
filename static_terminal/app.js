@@ -13,6 +13,13 @@ input.on('keyup', function(e){
 
 // Handle command
 $('.input-form').on('submit', function(e){
+	var art = [
+		" _                          _    _  _                 _   ",
+		"| |_  ___  ___  ___  ___  _| | _| || |_     ___  ___ | |_ ",
+		"|   || . || .'||   || . || . || . ||  _| _ |   || -_||  _|",
+		"|_|_||___||__,||_|_||_  ||___||___||_|  |_||_|_||___||_|  ",
+		"                    |___|                                 "
+	];
 	var data = [
 		{
 			command : 'help',
@@ -60,7 +67,11 @@ $('.input-form').on('submit', function(e){
 		{
 			command : 'greeting',
 			messages : [
-
+				'<span class="green">' + art[0] + "</span>",
+				'<span class="green">' + art[1] + "</span>",
+				'<span class="green">' + art[2] + "</span>",
+				'<span class="green">' + art[3] + "</span>",
+				'<span class="green">' + art[4] + "</span>",
 			]
 		},
 		{
@@ -98,6 +109,8 @@ function response(data, index){
 	$('.new-output').removeClass('new-output');
 	input.val('');
 	var messages = data[index].messages;
+	console.log(data);
+	console.log(messages);
 	// print out the message
 	for (i in messages)
 		$('.terminal').append('<p class="prompt">' + messages[i] + '</p>');
