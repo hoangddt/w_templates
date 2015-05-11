@@ -1,6 +1,7 @@
 body {
     background-color: #2B3D50;
 }
+pre {margin: 0;}
 #head {
     font-family: monospace;
     color: #fff;

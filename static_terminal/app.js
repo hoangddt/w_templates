@@ -113,7 +113,7 @@ function response(data, index){
 	console.log(messages);
 	// print out the message
 	for (i in messages)
-		$('.terminal').append('<p class="prompt">' + messages[i] + '</p>');
+		$('.terminal').append('<pre class="prompt">' + messages[i] + '</pre>');
 	$('.terminal').append('<p class="prompt command new-output"></p>');
 	console.log($('.new-output').offset().top);
 	// Autoscroll to bottom
