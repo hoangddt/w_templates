@@ -60,7 +60,7 @@ $('.input-form').on('submit', function(e){
 		{
 			command : 'greeting',
 			messages : [
-				
+
 			]
 		},
 		{
@@ -74,30 +74,43 @@ $('.input-form').on('submit', function(e){
 	e.preventDefault();
 	var val = $(this).children($('.ter-input')).val().toLowerCase();
 	
-	if (val === 'kittens'){
-    	showKittens();
-  	}else {
-    	resetForm();
-  	}
+	// match command with array
+	var index = search(data, val);
+	// response to terminal
+	response(data, index);
 });
 
-function resetForm(withKittens){
-  var message = "Sorry that command is not recognized."
-  var input = $('.ter-input');
+function search (data, value) {
+	var i;
+	for (i in data)
+		if (data[i].command === value)
+			return i;
 
+	// return the last index
+	return i;
+}
 
-  $('.new-output').removeClass('new-output');
-  input.val('');
-  $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt command new-output"></p>');
-  console.log($('.new-output').offset().top);
-  // Autoscroll to bottom
-  $('.terminal').animate({
-                 scrollTop: $('.new-output').offset().top
-                 //scrollTop: $('#your-id').offset().top
-                 //scrollTop: $('.your-class').offset().top
-              }, 'slow');
+function response(data, index){
+	// var message = "Sorry that command is not recognized."
+	var input = $('.ter-input');
 
-  // $('.new-output').velocity(
-  //   'scroll'
-  // ), {duration: 100}
+	// reset input and change new-input
+	$('.new-output').removeClass('new-output');
+	input.val('');
+	var messages = data[index].messages;
+	// print out the message
+	for (i in messages)
+		$('.terminal').append('<p class="prompt">' + messages[i] + '</p>');
+	$('.terminal').append('<p class="prompt command new-output"></p>');
+	console.log($('.new-output').offset().top);
+	// Autoscroll to bottom
+	$('.terminal').animate({
+	             scrollTop: $('.new-output').offset().top
+	             //scrollTop: $('#your-id').offset().top
+	             //scrollTop: $('.your-class').offset().top
+	          }, 'slow');
+
+	// $('.new-output').velocity(
+	//   'scroll'
+	// ), {duration: 100}
 }
