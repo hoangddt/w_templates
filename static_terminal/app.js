@@ -1,4 +1,5 @@
 // Focus to input form
+$('.terminal').niceScroll();
 var inputReady = true;
 var input = $('.ter-input');
 input.focus();
