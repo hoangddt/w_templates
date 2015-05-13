@@ -109,21 +109,16 @@ function response(data, index){
 	$('.new-output').removeClass('new-output');
 	input.val('');
 	var messages = data[index].messages;
-	console.log(data);
-	console.log(messages);
-	// print out the message
-	for (i in messages)
-		$('.terminal').append('<pre class="prompt">' + messages[i] + '</pre>');
-	$('.terminal').append('<p class="prompt command new-output"></p>');
-	console.log($('.new-output').offset().top);
-	// Autoscroll to bottom
-	$('.terminal').animate({
-	             scrollTop: $('.new-output').offset().top
-	             //scrollTop: $('#your-id').offset().top
-	             //scrollTop: $('.your-class').offset().top
-	          }, 'slow');
 
-	// $('.new-output').velocity(
-	//   'scroll'
-	// ), {duration: 100}
+	// print out the message
+	var terminal = $('.terminal');
+	for (i in messages)
+		terminal.append('<pre class="prompt">' + messages[i] + '</pre>');
+	terminal.append('<p class="prompt command new-output"></p>');
+	
+	var amount = terminal[0].scrollHeight;
+	// Autoscroll to bottom
+	terminal.animate({
+	             scrollTop: amount
+	          }, 'fast');
 }
