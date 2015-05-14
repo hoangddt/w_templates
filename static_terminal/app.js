@@ -60,9 +60,10 @@ $('.input-form').on('submit', function(e){
 		{
 			command : 'social',
 			messages : [
-				'<a href="#">github.com/hoangddt<a>',
-				'<a href="#">twitter.com/hoangddt<a>',
-				'<a href="#">facebook.com/hoangddt.net<a>',
+				'<a href="https://github.com/hoangddt">github.com/hoangddt<a>',
+				'<a href="https://twitter.com/hoangddt">twitter.com/hoangddt<a>',
+				'<a href="https://facebook.com/hoangddt.net">facebook.com/hoangddt.net<a>',
+				'<a href="mailto:hi@hoangddt.net">hi@hoangddt.net<a>'
 			]
 		},
 		{
